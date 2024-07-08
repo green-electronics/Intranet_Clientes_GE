@@ -1,0 +1,52 @@
+<div class="d-flex justify-content-center align-items-center vh-100">
+  <mat-card class="login-card mat-elevation-z8" *ngIf="!showResetPasswordCard">
+    <div class="image-container">
+      <img src="https://cdn.discordapp.com/attachments/754867305468395543/1258526292886683779/logo.png?ex=66885d72&is=66870bf2&hm=9b86115270cd3f99e3e3f663717f75b2d647fc6a0fb00a28771c7df8f16d2d33&" alt="Green electronics Logo" class="logo">
+    </div>
+    <mat-card-header class="text-center">
+      <mat-card-title class="login-title" color="primary">INICIAR SESION</mat-card-title>
+      <mat-card-subtitle class="login-subtitle">
+        Ingresa tu correo electrónico y contraseña para acceder a tu cuenta
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="login-form" (ngSubmit)="onSubmit()">
+        <mat-form-field appearance="outline" class="form-full-width">
+          <mat-label>Correo electrónico</mat-label>
+          <input matInput type="email" placeholder="Correo electrónico" required [(ngModel)]="email" name="email">
+        </mat-form-field>
+        <mat-form-field appearance="outline" class="form-full-width">
+          <mat-label>Contraseña</mat-label>
+          <input matInput type="password" placeholder="Contraseña" required [(ngModel)]="password" name="password">
+        </mat-form-field>
+        <div class="button-container">
+          <button mat-raised-button color="primary" type="submit" class="btn-login">INGRESAR</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="login-card mat-elevation-z8" *ngIf="showResetPasswordCard">
+    <div class="image-container">
+      <img src="https://cdn.discordapp.com/attachments/754867305468395543/1258526292886683779/logo.png?ex=66885d72&is=66870bf2&hm=9b86115270cd3f99e3e3f663717f75b2d647fc6a0fb00a28771c7df8f16d2d33&" alt="Green electronics Logo" class="logo">
+    </div>
+    <mat-card-header class="text-center">
+
+      <mat-card-title class="login-title" color="primary">CAMBIAR CONTRASEÑA</mat-card-title>
+      <mat-card-subtitle class="login-subtitle">
+        Ingresa una nueva contarseña
+      </mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+      <form class="login-form" (ngSubmit)="onResetPassword()">
+        <mat-form-field appearance="outline" class="form-full-width">
+          <mat-label>Contraseña nueva</mat-label>
+          <input matInput type="password" placeholder="Contraseña nueva" required [(ngModel)]="password" name="resetpasword">
+        </mat-form-field>
+        <div class="button-container">
+          <button mat-raised-button color="primary" type="submit" class="btn-login">CONFIRMAR</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
